@@ -1,0 +1,33 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body, .search {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.action{
+    height: 100vh;
+    background-color: #FFFFFF;
+    padding-top: 100px;
+    border-bottom: none;
+}
+
+.action .btn{
+
+}
+
+.search div.list-group a.list-group-item{
+    border: none;
+}
+
+.search div.list-group h4.list-group-item-heading{
+    font-size: 19px;
+}
+
+.search div.list-group p.list-group-item-text{
+    font-size: 16px;
+}
+
+.search .more-btn, .search-btn{
+    font-size: 18px;
+}
+
