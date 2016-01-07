@@ -1,4 +1,3 @@
 node_modules/
-public/libs
+#public/libs
 .idea/
-.sass-cache
