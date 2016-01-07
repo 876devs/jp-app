@@ -4,7 +4,10 @@
 		<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
 		<div class="row">
 			<div class="col-md-5">
-				<input type="text" class="form-control input-lg search-input" placeholder="JP Full Name">
+				<input type="text"
+				       class="form-control input-lg search-input"
+				       placeholder="JP Full Name"
+						ng-model="vm.name">
 			</div>
 			<div class="col-md-5">
 				<select class="form-control input-lg">
@@ -12,7 +15,7 @@
 				</select>
 			</div>
 			<div class="col-md-2">
-				<button class="btn btn-primary btn-lg btn-block search-btn">Search</button>
+				<button class="btn btn-primary btn-lg btn-block search-btn" ng-click="vm.search()">Search</button>
 			</div>
 				<!--<h4><strong>or</strong></h4>-->
 				<!--<input type="text" class="form-control input-lg search-input" placeholder="JP ID">-->

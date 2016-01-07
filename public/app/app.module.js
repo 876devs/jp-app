@@ -5,7 +5,9 @@
     angular
         .module('jp', [
             'home',
-            'search'
+            'search',
+            'shared-services',
+            'underscore'
         ]);
 
 })();
