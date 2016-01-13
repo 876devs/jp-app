@@ -6,7 +6,7 @@
         _ = require('underscore'),
         router = express.Router(),
         JP = require('../models/jp'),
-        lib = require('./lib');
+        lib = require('../libs/lib');
     /**
      * Attempts to search database for a JP
      */

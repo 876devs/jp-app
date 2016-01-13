@@ -31,7 +31,11 @@
 			<hr>
 			<div class="list-group">
 				<a href="#" class="list-group-item" ng-repeat="jp in vm.results">
-					<h4 class="list-group-item-heading">{{jp.last_name}}, {{jp.first_name}} {{jp.middle_name}}</h4>
+					<h4 class="list-group-item-heading">
+						{{jp.last_name | capitalize }},
+						{{jp.first_name | capitalize}}
+						{{jp.middle_name | capitalize}}
+					</h4>
 					<p class="list-group-item-text">18 Judith Avenue Edgewater Bridgeport P.O.</p>
 					<p class="list-group-item-text">{{jp.parish}}</p>
 				</a>

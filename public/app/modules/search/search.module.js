@@ -4,7 +4,9 @@
 (function () {
     angular
         .module('search', [])
+        .filter('capitalize', capitalize)
         .config(config);
+
 
     function config($routeProvider) {
         $routeProvider
@@ -14,6 +16,14 @@
                 controllerAs: 'vm'
             });
     }
+
+    function capitalize(){
+        return function(str) {
+            return str.split(" ").map(function(input){return (!!input) ? input.charAt(0).toUpperCase()
+            + input.substr(1).toLowerCase() :''}).join(" ");
+        }
+    }
+
 
 
 })();
