@@ -5,18 +5,43 @@
     angular
         .module('search')
         .controller('Search', Search);
-    Search.$inject = ['$routeParams', 'searchService', '$location'];
 
-    function Search($routeParams, searchService, $location){
+    Search.$inject = ['$routeParams', 'parishService', 'dataService'];
+
+    function Search($routeParams, parishService, dataService){
         var vm = this;
-        vm.q = $routeParams.q;
-        vm.queryString = $routeParams.q;
+        vm.query = {};
+        vm.parishes = parishService.getParishes();
+        vm.query.name = $routeParams.name;
+        vm.query.parish = parishService.search({"value": $routeParams.parish});
+        vm.jp_name = $routeParams.name;
+
+        _search();
 
         vm.search = function(){
-            $location.url('/search?q=' + vm.q);
-            searchService.search(vm.q);
+            if(vm.query.name){
+                _search();
+            }
         };
-        //console.log($routeParams.q);
+
+        function _search(){
+            var q = _buildQuery(vm.query.name, vm.query.parish);
+            return dataService.search(q).then(function(data){
+                vm.results = data;
+                return vm.results;
+            });
+        }
+
+        function _buildQuery(name, parish){
+            var query = {};
+            if(name){
+                query.name = name.trim().replace(" ", "+");
+            }
+            if(parish.value){
+                query.parish = parish.value.trim().replace(" ", "+");
+            }
+            return query;
+        }
     }
 
 })();

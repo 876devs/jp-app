@@ -1,27 +1,25 @@
 <div class="jumbotron text-center action">
 	<div class="container">
-		<h1>Hello, world!</h1>
-		<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-		<div class="row">
-			<div class="col-md-5">
+		<div class="row search-form">
+			<div class="col-md-4">
+			</div>
+			<div class="col-md-4">
 				<input type="text"
 				       class="form-control input-lg search-input"
 				       placeholder="JP Full Name"
-						ng-model="vm.name">
-			</div>
-			<div class="col-md-5">
-				<select class="form-control input-lg">
-					<option>Saint Catherine</option>
+				       ng-model="vm.query.name">
+
+				<select
+						class="form-control input-lg search-input"
+						ng-model="vm.query.parish"
+						ng-options="parish.name for parish in vm.parishes">
+
 				</select>
-			</div>
-			<div class="col-md-2">
+				<p style="font-size: 18px;">You can get a smaller listing of JPs if you choose a parish.</p>
 				<button class="btn btn-primary btn-lg btn-block search-btn" ng-click="vm.search()">Search</button>
 			</div>
-				<!--<h4><strong>or</strong></h4>-->
-				<!--<input type="text" class="form-control input-lg search-input" placeholder="JP ID">-->
-
+			<div class="col-md-4">
+			</div>
 		</div>
-
-
 	</div>
 </div>

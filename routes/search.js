@@ -1,27 +1,26 @@
 /**
  * Created by tremaine on 1/7/16.
  */
-var express = require('express'),
-    router = express.Router(),
-    JP = require('../models/jp');
-
-router.get('/search', function(req, res){
-   if(req.query.name){
-       var separator = "\\+";
-       var t = req.query.name.replace("+", " ");
-       var q = t.split(" ");
-        if(q.length === 2){
-            JP.find({'first_name': q[0].toLowerCase(), 'last_name' : q[1].toLowerCase() }).exec(function(err, list){
-               res.json(list);
+(function(){
+    var express = require('express'),
+        _ = require('underscore'),
+        router = express.Router(),
+        JP = require('../models/jp'),
+        lib = require('./lib');
+    /**
+     * Attempts to search database for a JP
+     */
+    router.get('/search', function(req, res){
+        if(!_.isEmpty(req.query)){
+            var query = lib.buildQuery(req.query);
+            JP.find(query).exec(function(err, list){
+                res.json(list);
             });
+        }else{
+            res.json({message: "Invalid number of parameters sent"});
         }
+    });
 
-       //JP.search(q, function(err, list){
-       //    res.json(list);
-       //});
+    module.exports = router;
 
-
-   }
-});
-
-module.exports = router;
+})();

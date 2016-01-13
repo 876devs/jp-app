@@ -13,7 +13,7 @@
         street: {type: String},
         locality: {type: String},
         town: {type: String},
-        parish: {type: String, required: true, index: true},
+        parish: {type: String, required: true},
         contact: [{type: String}],
         created: {type: Date, required: true}
     });

@@ -1,38 +1,53 @@
 <div class="search">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-10">
-				<input class="form-control input-lg" ng-model="vm.q">
+			<div class="col-md-5">
+				<input class="form-control input-lg" ng-model="vm.query.name">
+			</div>
+			<div class="col-md-5">
+				<select
+						class="form-control input-lg search-input"
+						ng-model="vm.query.parish"
+						ng-options="parish.name for parish in vm.parishes">
+
+				</select>
 			</div>
 			<div class="col-md-2">
 				<button class="btn btn-primary btn-lg search-btn" ng-click="vm.search()">Search</button>
 			</div>
 		</div>
-		<h1>You searched for '{{vm.queryString}}' </h1>
-		<h4><strong>1333</strong> results matched your search</h4>
-		<hr>
-		<div class="list-group">
-			<a href="#" class="list-group-item">
-				<h4 class="list-group-item-heading">ALLEN, Leopold A</h4>
-				<p class="list-group-item-text">18 Judith Avenue Edgewater Bridgeport P.O.</p>
-				<p class="list-group-item-text">St Catherine</p>
-			</a>
-			<a href="#" class="list-group-item">
-				<h4 class="list-group-item-heading">ALLEN, Alsie Murene</h4>
-				<p class="list-group-item-text">71 Hartford Drive, Vilmore</p>
-				<p class="list-group-item-text">St Catherine</p>
-			</a>
+
+		<div class="medium-card" ng-if="vm.results.length === 0">
+			<p>Your search for '<strong>{{vm.jp_name}}</strong>' did not match any records.</p>
+			<p>Suggestions</p>
+			<ul>
+				<li>Make sure the full name of the JP is entered.</li>
+				<li>Choose a parish in which the JP resides.</li>
+			</ul>
 		</div>
 
-		<div class="more">
-			<div class="row">
-				<div class="col-md-4"></div>
-				<div class="col-md-4">
-					<button class="btn btn-primary btn-lg btn-block more-btn">Show More Results</button>
-				</div>
-				<div class="col-md-4"></div>
-
+		<div class="lg-card" ng-if="vm.results.length > 0">
+			<h3>You searched for '{{vm.jp_name}}' </h3>
+			<hr>
+			<div class="list-group">
+				<a href="#" class="list-group-item" ng-repeat="jp in vm.results">
+					<h4 class="list-group-item-heading">{{jp.last_name}}, {{jp.first_name}} {{jp.middle_name}}</h4>
+					<p class="list-group-item-text">18 Judith Avenue Edgewater Bridgeport P.O.</p>
+					<p class="list-group-item-text">{{jp.parish}}</p>
+				</a>
 			</div>
 		</div>
+
+
+		<!--<div class="more">-->
+			<!--<div class="row">-->
+				<!--<div class="col-md-4"></div>-->
+				<!--<div class="col-md-4">-->
+					<!--<button class="btn btn-primary btn-lg btn-block more-btn">Show More Results</button>-->
+				<!--</div>-->
+				<!--<div class="col-md-4"></div>-->
+
+			<!--</div>-->
+		<!--</div>-->
 	</div>
 </div>

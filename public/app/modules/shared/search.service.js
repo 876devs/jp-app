@@ -1,16 +1,16 @@
 /**
- * Created by tremaine on 1/6/16.
+ * Created by tremaine on 1/12/16.
  */
 (function(){
     angular
-        .module('shared-services',[])
-        .factory('searchService', searchService);
+        .module('shared-services')
+        .factory('testService', testService);
 
-    searchService.$inject = ['$http'];
+    testService.$inject = ['$http'];
 
-    function searchService($http){
+    function testService($http){
         var service = {
-           search: search
+            search: search
         };
 
         return service;

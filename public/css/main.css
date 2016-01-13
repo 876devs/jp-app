@@ -31,3 +31,14 @@ body, .search {
     font-size: 18px;
 }
 
+.search-input, .search-btn{
+    margin-bottom: 20px;
+}
+
+.search{
+    height: 100vh;
+}
+
+.medium-card{
+    font-size: 18px;
+}
