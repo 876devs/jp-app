@@ -28,6 +28,7 @@
             var q = _buildQuery(vm.query.name, vm.query.parish);
             return dataService.search(q).then(function(data){
                 vm.results = data;
+                vm.jp_name = q.name;
                 return vm.results;
             });
         }
