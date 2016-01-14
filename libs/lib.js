@@ -7,20 +7,19 @@
         var name = queryList.name.split(" "),
             query = {};
         switch(name.length){
-            case 1: query.first_name = name[0].toLowerCase();
+            case 1: query.first_name = new RegExp(name[0].toLowerCase(), 'i');
                 break;
-            case 2: query.first_name = name[0].toLowerCase();
-                query.last_name = name[1].toLowerCase();
+            case 2: query.first_name = new RegExp(name[0].toLowerCase(), 'i');
+                query.last_name = new RegExp(name[1].toLowerCase(), 'i');
                 break;
         }
 
         if(queryList.parish){
             if(queryList.parish != "blank"){
-                query.parish = queryList.parish;
+                query.parish = new RegExp(queryList.parish, 'i');
             }
         }
-
         return query;
-    }
+    };
 
 })();
