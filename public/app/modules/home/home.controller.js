@@ -13,6 +13,7 @@
            vm.query = {};
         vm.parishes = parishService.getParishes();
         vm.query.parish = vm.parishes[0];
+
         vm.search = function(){
             if(vm.query.name){
                 $location.url('/search?name=' + vm.query.name + '&parish=' + vm.query.parish.value);
