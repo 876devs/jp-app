@@ -24,6 +24,7 @@
             }
         }
         //comment
+        //another comment
         return query;
     };
 
