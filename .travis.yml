@@ -2,4 +2,9 @@ language: node_js
 node_js:
 - stable
 - '0.12'
-
+deploy:
+  provider: heroku
+  api_key:
+    secure: eOUhvzkK94X3G/eRBS8aWZ5KOo7AICvK9bqzES+MNB6hHrfRjfU5zm3GMZB546DMCJeBxhl9MVObPGYn+nN+poMgyLYaa1QLM3U8frnW+snP/edy54DapN7Kz7qE+FQG1VKWTjLXWwsqa3Ff5/cjs1sQR/5QrbimiS9nZivwxRHxqwuT1biEtleik1B97BEEvf1mFtkP59jqDiVzt5SnAXb0Rt3ZUvPnTHB8ExUWm+A9MCjO8asY3W3RRAh54PNuuqhCLPQvAEUZhQRcIKunoxSXtLLSMD8lQ7m/EcB/8+jxYUAxVyhoQErUwcN0NUq9du83yHP1pTv2WtHnge6Lq5EAqNMDq15KpdFCpBMTR7sOUwYAhKxleKy7vO7dPz4LcdRqtWlWssnk8U/TQTlRfmKen2YNoFpKiphiRmZDRotZ7xP20cyQXaTEUH6PLNkmIvKA0BYcIF+U4S56VWuQdxwBt5NWrwGjP41soU1LKjTpORDeoaBHHWfB1nU+wb5CXwsd9sny3u7/JQN5edM5DFTn/ETJUZHqXcJxkSTpeHN1m6YBdGu53sDMANa2Z3z5I8V6uJHn9yPgDIwPxA87UDsg/rjFdkKQONRXRcDMCYLcmMgEH7BWQ98O23jshZqEPRXJGSfzpxdaB61nwWzfUd6JMLb4ArUj+DgO4tFXYh0=
+  app:
+    master: jp-verify-staging
