@@ -2,7 +2,11 @@
  * Created by tremaine on 1/13/16.
  */
 (function(){
-
+    /**
+     * Builds query object from list of url query parameters.
+     * @param queryList
+     * @returns {{}}
+     */
     exports.buildQuery = function(queryList){
         var name = queryList.name.split(" "),
             query = {};
