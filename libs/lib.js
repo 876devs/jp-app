@@ -23,6 +23,7 @@
                 query.parish = new RegExp(queryList.parish, 'i');
             }
         }
+        //comment
         return query;
     };
 
