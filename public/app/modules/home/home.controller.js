@@ -11,8 +11,14 @@
     function Home(parishService, $location){
        var vm = this;
            vm.query = {};
-        vm.parishes = parishService.getParishes();
-        vm.query.parish = vm.parishes[0];
+
+        _activate();
+
+        function _activate(){
+            //spinnerService.show('booksSpinner');
+            vm.parishes = parishService.getParishes();
+            vm.query.parish = vm.parishes[0];
+        }
 
         vm.search = function(){
             if(vm.query.name){

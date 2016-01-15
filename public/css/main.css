@@ -1,4 +1,4 @@
-/* Move down content because we have a fixed navbar that is 50px tall */
+
 body, .search {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -7,10 +7,17 @@ body, .search {
 .action{
     height: 100vh;
     background-color: #FFFFFF;
-    padding-top: 100px;
+    padding-top: 30px;
     border-bottom: none;
 }
 
+.service-desc{
+    margin-bottom: 20px;
+}
+
+div.alert.alert-info{
+    font-size: 18px;
+}
 .action .btn{
 
 }
