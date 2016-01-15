@@ -11,20 +11,21 @@
     function parishService(_){
         var _parishes = [
             {"name": "Select Parish", "value" : "blank"},
-            { "name": "Kingston", "value" : "Kingston"},
-            { "name": "St Andrew","value" : "Saint Andrew"},
-            { "name": "St Catherine","value" : "Saint Catherine"},
-            { "name": "St Thomas","value" : "Saint Thomas"},
-            { "name": "Portland","value" : "Portland"},
-            { "name": "St Mary", "value" : "Saint Mary"},
-            { "name": "St Ann", "value" : "Saint Ann"},
-            { "name": "Manchester", "value" : "Manchester"},
-            { "name": "Clarendon", "value" : "Clarendon"},
-            { "name": "St Elizabeth", "value" : "Saint Elizabeth"},
-            { "name": "Hanover", "value" : "Hanover"},
-            { "name": "Westmoreland", "value" : "Westmoreland"},
-            { "name": "Trelawny", "value" : "Trelawny"},
-            { "name": "St James", "value" : "Saint James"}];
+            // { "name": "Kingston", "value" : "Kingston"},
+            // { "name": "St Andrew","value" : "Saint Andrew"},
+            { "name": "St Catherine","value" : "Saint Catherine"}
+            // { "name": "St Thomas","value" : "Saint Thomas"},
+            // { "name": "Portland","value" : "Portland"},
+            // { "name": "St Mary", "value" : "Saint Mary"},
+            // { "name": "St Ann", "value" : "Saint Ann"},
+            // { "name": "Manchester", "value" : "Manchester"},
+            // { "name": "Clarendon", "value" : "Clarendon"},
+            // { "name": "St Elizabeth", "value" : "Saint Elizabeth"},
+            // { "name": "Hanover", "value" : "Hanover"},
+            // { "name": "Westmoreland", "value" : "Westmoreland"},
+            // { "name": "Trelawny", "value" : "Trelawny"},
+            // { "name": "St James", "value" : "Saint James"}
+            ];
 
         var service = {
             getParishes: getParishes,
