@@ -14,7 +14,7 @@
         vm.parishes = parishService.getParishes();
         vm.query.name = $routeParams.name;
         vm.query.parish = parishService.search({"value": $routeParams.parish});
-        vm.jp_name = $routeParams.name;
+        vm.jp_name = $routeParams.name.replace("+", " ");
 
         _search();
 
@@ -28,7 +28,7 @@
             var q = _buildQuery(vm.query.name, vm.query.parish);
             return dataService.search(q).then(function(data){
                 vm.results = data;
-                vm.jp_name = q.name;
+                vm.jp_name = q.name.replace("+", " ");
                 return vm.results;
             });
         }

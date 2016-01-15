@@ -15,7 +15,8 @@
         town: {type: String},
         parish: {type: String, required: true},
         contact: [{type: String}],
-        created: {type: Date, required: true}
+        created: {type: Date, required: true},
+        listed: {type: Date, required: true}
     });
     /*
      Static Methods
