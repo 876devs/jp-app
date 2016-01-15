@@ -28,6 +28,7 @@
 
 		<div class="lg-card" ng-if="vm.results.length > 0">
 			<h3>You searched for '{{vm.jp_name}}' </h3>
+			<p style="font-size: 18px"><strong>{{vm.results.length}}</strong> records found</p>
 			<hr>
 			<div class="list-group">
 				<a href="#" class="list-group-item" ng-repeat="jp in vm.results">
@@ -36,8 +37,8 @@
 						{{jp.first_name | capitalize}}
 						{{jp.middle_name | capitalize}}
 					</h4>
-					<p class="list-group-item-text">18 Judith Avenue Edgewater Bridgeport P.O.</p>
-					<p class="list-group-item-text">{{jp.parish}}</p>
+					<p class="list-group-item-text">{{jp.parish | capitalize}}</p>
+					<p class="list-group-item-text">Listed as at: {{jp.listed}}</p>
 				</a>
 			</div>
 		</div>
