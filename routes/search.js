@@ -13,7 +13,8 @@
     router.get('/search', function(req, res){
         if(!_.isEmpty(req.query)){
             var query = lib.buildQuery(req.query);
-            JP.find(query).exec(function(err, list){
+            JP.find({$or: query})
+                .exec(function(err, list){
                 res.json(list);
             });
         }else{
@@ -21,6 +22,6 @@
         }
     });
 
-    module.exports = router;
+   module.exports = router;
 
 })();
