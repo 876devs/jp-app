@@ -15,6 +15,7 @@
         vm.query.name = $routeParams.name;
         vm.query.parish = parishService.search({"value": $routeParams.parish});
         vm.jp_name = $routeParams.name.replace("+", " ");
+        vm.enterKeySearch = enterKeySearch;
 
         _search();
 
@@ -42,6 +43,12 @@
                 query.parish = parish.value.trim().replace(" ", "+");
             }
             return query;
+        }
+
+        function enterKeySearch(keyEvent){
+            if(keyEvent.which === 13){
+                _search();
+            }
         }
     }
 
