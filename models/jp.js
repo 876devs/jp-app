@@ -16,7 +16,8 @@
         parish: {type: String, required: true},
         contact: [{type: String}],
         created: {type: Date, required: true},
-        listed: {type: Date, required: true}
+        listed: {type: Date, required: true},
+        occupation: {type: String, required: true}
     });
     /*
      Static Methods
