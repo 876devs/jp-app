@@ -15,6 +15,7 @@
 				<input type="text"
 				       class="form-control input-lg search-input"
 				       placeholder="Search Listy"
+				       ng-keypress="vm.enterKeySearch($event)"
 				       ng-model="vm.query.name">
 				      
 				<!--<select-->
