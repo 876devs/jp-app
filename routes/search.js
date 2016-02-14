@@ -15,7 +15,8 @@
             var query = lib.buildQuery(req.query);
             JP.find({$or: query})
                 .exec(function(err, list){
-                res.json(list);
+                    lib.sortResultsByRelevance(list, req.query)
+                    res.json(list);
             });
         }else{
             res.json({message: "Invalid number of parameters sent"});
