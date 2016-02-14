@@ -21,8 +21,8 @@
 			<p>Your search for '<strong>{{vm.jp_name}}</strong>' did not match any records.</p>
 			<p>Suggestions</p>
 			<ul>
-				<li>Make sure the full name of the JP is entered.</li>
-				<li>Choose a parish in which the JP resides.</li>
+				<li>Make sure the full name of the professional is entered.</li>
+				<li>Choose a parish in which the professional may work or reside.</li>
 			</ul>
 		</div>
 
@@ -35,7 +35,7 @@
 					<h4 class="list-group-item-heading">
 						{{jp.last_name | capitalize }},
 						{{jp.first_name | capitalize}}
-						{{jp.middle_name | capitalize}}
+						{{jp.middle_name | capitalize}} - {{ jp.occupation | capitalize}}
 					</h4>
 					<p class="list-group-item-text">{{jp.parish | capitalize}}</p>
 					<p class="list-group-item-text">Listed as at: {{jp.listed | date: 'MMM d, y'}}</p>
