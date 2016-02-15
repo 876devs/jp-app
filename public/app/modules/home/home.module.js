@@ -13,6 +13,18 @@
                 templateUrl: 'app/modules/home/home.html',
                 controller: 'Home',
                 controllerAs: 'vm'                
+            }).when('/privacy-policy', {
+                templateUrl: 'app/modules/home/about.html',
+                controller: 'Home',
+                controllerAs: 'vm'
+            }).when('/terms',{
+               templateUrl: 'app/modules/home/terms.html',
+                controller: 'Home',
+                controllerAs: 'vm'
+            }).when('/privacy-policy',{
+                templateUrl: 'app/modules/home/privacy.html',
+                controller: 'Home',
+                controllerAs: 'vm'
             });
     }
 
