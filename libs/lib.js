@@ -39,4 +39,8 @@
         }
         return query;
     };
+
+    exports.sortResultsByRelevance = function(list, query){
+        console.log(query);
+    }
 })();

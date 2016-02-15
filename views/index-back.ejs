@@ -1,38 +1,36 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="jp">
 <head>
-  <meta charset="utf-8">
-  <link href="css/custom-bootstrap-theme.css" rel="stylesheet">
-  <!--<link href="css/main.css" rel="stylesheet">-->
-  <link href="css/jumbo.css" rel="stylesheet">
-  <link rel="icon" href="../../favicon.ico">
-  <link rel="text/plain" rel="author" href="/humans.txt">
-  <title>Listy</title>
-  <meta name="description" content="Listy is a search engine for publicly listed professionals within Jamaica.
+    <meta charset="utf-8">
+    <link href="css/custom-bootstrap-theme.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="text/plain" rel="author" href="/humans.txt">
+    <title>Listy</title>
+    <meta name="description" content="Listy is a search engine for publicly listed professionals within Jamaica.
   Justices of the Peace (JP), lawyers, members of parliament" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', 'UA-73776008-1', 'auto');
-    ga('send', 'pageview');
+        ga('create', 'UA-73776008-1', 'auto');
+        ga('send', 'pageview');
 
-  </script>
-  <base href="/">
+    </script>
+    <base href="/">
 </head>
 
 <body>
 
-<div class="container">
-  <div class="header clearfix" ng-include="'app/modules/partials/nav.html'">
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container" ng-include="'app/modules/partials/nav.html'">
 
-  </div>
-</div>
+    </div>
+</nav>
 
 <div data-ng-view autoscroll></div>
 
