@@ -28,10 +28,10 @@
      * @returns {{}}
      */
     exports.buildQuery = function(queryList){
-            var query = {},
-                list;
-            list = splitQuery(queryList);
-            query = buildOr(list);
+        var query = {},
+            list;
+        list = splitQuery(queryList);
+        query = buildOr(list);
         if(queryList.parish){
             if(queryList.parish != "blank"){
                 query.parish = new RegExp(queryList.parish, 'i');
