@@ -14,8 +14,9 @@
         if(!_.isEmpty(req.query)){
             var query = lib.buildQuery(req.query);
             JP.find({$or: query})
-                .exec(function(err, list){
-                res.json(list);
+                .exec(function(err, result){
+                    var list = lib.sortResult(result, req.query);
+                    res.json(list);
             });
         }else{
             res.json({message: "Invalid number of parameters sent"});

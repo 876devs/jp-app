@@ -31,7 +31,7 @@
 			<p style="font-size: 18px"><strong>{{vm.results.length}}</strong> records found</p>
 			<hr>
 			<div class="list-group">
-				<a href="#" class="list-group-item" ng-repeat="jp in vm.results">
+				<a href="#" class="list-group-item" ng-repeat="jp in vm.results | orderBy: 'relevance'">
 					<h4 class="list-group-item-heading">
 						{{jp.last_name | capitalize }},
 						{{jp.first_name | capitalize}}
