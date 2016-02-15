@@ -17,7 +17,8 @@
         contact: [{type: String}],
         created: {type: Date, required: true},
         listed: {type: Date, required: true},
-        occupation: {type: String, required: true}
+        occupation: {type: String, required: true},
+        relevance: {type: Number}
     });
     /*
      Static Methods
@@ -31,6 +32,14 @@
     JPSchema.statics.search = function(query, callback){
         return this.find(query, callback);
     };
+
+    //JPSchema.virtual('relevance').get(function(){
+    //    this.relevance;
+    //}).set(function(rel){
+    //   this.relevance = rel;
+    //});
+
+    JPSchema.set('toJSON', { virtuals: true });
 
     module.exports = mongoose.model('JP', JPSchema);
 })();

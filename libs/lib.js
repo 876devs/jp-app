@@ -2,7 +2,6 @@
  * Created by tremaine on 1/13/16.
  */
 (function(){
-
     var KEYS = ['first_name', 'last_name', 'middle_name'];
     /**
      * Builds an or query
@@ -29,8 +28,9 @@
      * @returns {{}}
      */
     exports.buildQuery = function(queryList){
-        var list = queryList.name.split(" "),
-            query = {};
+            var query = {},
+                list;
+            list = splitQuery(queryList);
             query = buildOr(list);
         if(queryList.parish){
             if(queryList.parish != "blank"){
@@ -39,4 +39,29 @@
         }
         return query;
     };
+
+    function splitQuery(list){
+        return list.name.split(" ");
+    }
+    /**
+     * Assigns a relevance to an object
+     * matching query parameters
+     * @param result
+     * @param queryList
+     * @returns {*}
+     */
+    exports.sortResult = function(result, queryList){
+        var i = result.length;
+        var list = splitQuery(queryList);
+        if(list.length === 2){
+            while(i--){
+                if(result[i].first_name === list[0] && result[i].last_name === list[1]){
+                    result[i].relevance = 1;
+                }else if(result[i].first_name === list[1] && result[i].last_name === list[0]){
+                    result[i].relevance = 1;
+                }
+            }
+        }
+        return result;
+    }
 })();
